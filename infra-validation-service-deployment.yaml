@@ -1,0 +1,20 @@
+# infra-validation-service-deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: infra-validation-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: infra-validation-service
+  template:
+    metadata:
+      labels:
+        app: infra-validation-service
+    spec:
+      containers:
+      - name: infra-validation-service
+        image: infra-validation-service:latest
+        # Inclua outras configurações necessárias, como portas, volumes, etc.
